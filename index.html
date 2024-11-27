@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brunao Dev Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ffe6f1;
+            color: #444; /* Darkened font color */
+        }
+
+ 
+ 
+
+
+
+
+
+
+
+  header {
+            position: relative;
+            text-align: center;
+            color: black;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        header .slide-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        header .slide-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        header .details {
+            position: absolute;
+            top: 40%;
+            left: 0%;
+            animation: fadeIn 2s ease-in-out;
+            max-width: 50%;
+            color: skyblue;
+            font-style: italic;
+            font-family: bold;
+        }
+
+        header .details h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-family: "Arial", sans-serif;
+        }
+
+        header .details p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-style: italic; /* Italicized paragraph */
+        }
+
+       
+        /* Other sections of your code remain the same */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: linear-gradient(90deg, #ffe6f1, #ffccdd);
+            flex-direction: row;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-text h1 {
+            font-size: 43px;
+            margin-bottom: 20px;
+            color: skyblue;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text button {
+            padding: 10px 0px;
+            background: pink;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text button:hover {
+            background: #e55d7a;
+        }
+
+        .flip-container img {
+            width: 200px;
+            height: auto;
+           max-width: 100%;
+           margin-top:50px;
+        }
+
+        .services, .projects, .cta {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .services h2, .projects h2, .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: skyblue;
+        }
+
+        .services-cards, .projects-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card, .project-card {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: left;
+            flex: 1 1 300px;
+        }
+
+        .service-card h3, .project-card h3 {
+            margin-bottom: 10px;
+            
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            background: pink;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .cta button:hover {
+            background: #e55d7a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero,flip-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text{
+              max-width: 100%;
+              
+            }
+            
+            .flip-container{
+                max-width: 100%;
+            }
+
+            header .details h1 {
+                font-size: 2rem;
+            }
+
+            header .details {
+                left: 10%;
+                max-width: 80%;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .service-card, .project-card {
+                max-width: 90%;
+            }
+
+            .services-cards, .projects-gallery {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .cta button {
+                font-size: 16px;
+                padding: 12px 25px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        /* Very small screens (e.g., mobile devices) */
+        @media (max-width: 480px) {
+            header .details {
+                left: 5%;
+                max-width: 90%;
+            }
+
+            header .details h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-text button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: linear-gradient(90deg, #ffe6f1, #ffccdd);
+            flex-direction: row;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-text h1 {
+            font-size: 43px;
+            margin-bottom: 20px;
+            color: skyblue;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text button {
+            padding: 10px 20px;
+            background: pink;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero-text button:hover {
+            background: #e55d7a;
+        }
+        
+        
+        .flip-container img {
+             width: 200px;  
+             height: auto;
+             max-width: 100%;
+             margin-top:50px;
+        }
+
+        .services, .projects, .cta {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .services h2, .projects h2, .cta h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: skyblue;
+        }
+
+        .services-cards, .projects-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-card, .project-card {
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: left;
+            flex: 1 1 300px;
+        }
+
+         .service-card h3{
+           color: Turquoise;
+           font-weight: bold;
+           font-size: 27px;
+         }
+
+
+
+
+
+         .project-card h3 {
+            margin-bottom: 10px;
+           
+             font-weight: bold;
+            color: #4682B4; /* Darker Sky-Blue (SteelBlue) */
+            font-size: 27px;/*👍👍👍👍👍 Italicized service and project headings */
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            background: pink;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .cta button:hover {
+            background: #e55d7a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text, .hero-image {
+                max-width: 100%;
+            }
+
+            header .details h1 {
+                font-size: 2rem;
+            }
+
+            header .details {
+                left: 10%;
+                max-width: 80%;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .service-card, .project-card {
+                max-width: 90%;
+            }
+
+            .services-cards, .projects-gallery {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+            .cta button {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        /* Very small screens (e.g., mobile devices) */
+        @media (max-width: 480px) {
+            header .details {
+                left: 5%;
+                max-width: 90%;
+            }
+
+            header .details h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-text button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        
+        .flip-container {
+  perspective: 1000px;
+  
+}
+
+.flip-card {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img, .flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+        
+        
+        /* Styling the footer */
+        footer {
+            background: linear-gradient(90deg, #ffe6f1, #ffccdd);
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Styling the About Me section */
+        footer h1 {
+            font-weight: bold;
+            color: #4682B4; /* Darker Sky-Blue (SteelBlue) */
+            font-size: 2em;
+        }
+
+        footer p {
+            font-size: 1.2em;
+            color: black;
+            line-height: 1.6;
+        }
+
+        /* Making the footer responsive */
+        @media (max-width: 768px) {
+            footer h1 {
+                font-size: 1.5em;
+            }
+
+            footer p {
+                font-size: 1em;
+            }
+        }        
+        
+        
+        .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .social-icons {
+        justify-content: space-around;
+    }
+
+    .social-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social-icon {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .social-icons {
+        justify-content: center;
+    }
+
+    .social-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .social-icon {
+        font-size: 12px;
+    }
+}
+        
+        
+        
+        
+        
+        
+        
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+   <header>
+        <div class="slide-container">
+            <img src="/murshid__rana-20241122-0001.jpg" alt="background">
+            <img src="/murshid__rana-20240723-0002.jpg" alt="Image 2">
+            <img src="/murshid__rana-20241122-0002.jpg" alt="Image 3">
+            <img src="/murshid__rana-20241122-0003.jpg" alt="Image 4">
+            <img src="/murshid__rana-20241122-0007.jpg" alt="Image 5">
+        </div>
+        <div class="details">
+            <h1>Hi, I'm Murshid Rana!</h1>
+            <p>Product designer and digital creative director working in design field for 7 years. Specialized in user interface design.</p>
+        </div>
+    </header>
+    
+    
+    
+    
+    
+    
+
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Aashiq-e-Rasool♥️</h1>
+            <p><b>"Jahan zindagi ke har pal ki apni kahani ho, wahan aapka saath zaroori hai Isi Liye Follow karke Mere Sath Rahiye!"👇</b><p>
+            
+            <a href="https://www.instagram.com/murshid__rana/profilecard/?igsh=MTNhY3kyaXVrdTJsaQ==" target="_blank" style="text-decoration: none;">
+            <button style="background: hotpink;">Follow Now</button>
+            </a> </div>
+            
+            
+            
+            
+
+            <div class="flip-container">
+    <div class="flip-card">
+      <div class="flip-card-front">
+        <img src="/IMG_20241125_005133.png" alt="Front Image" />
+      </div>
+      <div class="flip-card-back">
+        <img src="/20241125_002718.png" alt="Back Image" />
+      </div>
+    </div>
+  </div>
+         </div>
+        </section>
+
+    <section class="services">
+        <h2>Milestones of Excellence</h2>
+        <div class="services-cards">
+            <div class="service-card">
+                <h3>Certificates🥱</h3>
+                <b><p>👉 CCC (2x)</p>
+                <p>👉 Tally ERP 9</p>
+                <p>👉 HTML</p>
+                <p>👉 CSS</p>
+                <p>👉 JavaScript</p>
+                <p>👉Python </p>
+                </b>
+                
+            </div>
+            <div class="service-card">
+                <h3>Digree & Diploma💪</h3>
+                <b><p>👉 B.Com</p>
+                <p>👉 'O'Level</p>
+                <h3>I know languages🗣️</h3>
+                 <p>👉 Hindi & English</p>
+                
+            </div>
+            <div class="service-card">
+                <h3>Vision & Mission♥️</h3>
+                <p style="color:Tue;">
+"My vision is to become a successful businessman and a billionaire. However, my success is not limited to personal gains. I aspire to use my resources and knowledge to add value to society and make a positive impact on people's lives."
+
+</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Recent Projects</h2>
+        <div class="projects-gallery">
+            <div class="project-card">
+                <img src="/image_search_1732723519228.jpg" height="350" width="300"  alt="Project 1">
+                <p><b>Woh maalik hai sabka, bina maange bhi sab ko ata karta hai☝️</b>
+</p>
+            </div>
+            <div class="project-card">
+                <img src="/downloadfile.jpg"height="330" width="315" alt="Project 2">
+                <p><b>Nabi ﷺ ka paigham sirf ek qaum ke liye nahi, balki tamam insaniyat ke liye rehmat hai.🥰</b></p>
+            </div>
+            <div class="project-card">
+                <img src="/_766285ed-36b8-46d1-a8fb-b8148d4813ba.jpeg" height="330" width="315" alt="Project 3">
+                <p><b>Meri Kya Auqat Baya Karu Shan e Ali Ki Ali Ka Naam Lena Bhi Ibadat Hai💖.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Do You Want To Know Me🤔</h2>
+        <button style="background:hotpink;">Contact Me</button>
+    </section>
+    
+    
+    
+    
+    
+     <div class="social-icons">
+<center><a href="https://www.instagram.com/zubaan_e_rahat/profilecard/?igsh=MTRjc2NvNDN2emx1Zw==" target="_blank" class="social-icon">
+      <i class="fab fa-instagram"></i>
+      
+      
+      
+    </a>
+    <a href="https://x.com/Murshid__Rana?s=09" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    
+    
+    
+    <a href="https://youtube.com/@zubaan-e-rahat?si=Bk5YJIBG8-bpWNB0" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+   
+   
+    <a href="https://youtube.com/@zubaan-e-rahat?si=Bk5YJIBG8-bpWNB0" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a></center>
+</div>
+
+  
+  
+  
+  
+
+    <!-- Footer Section -->
+    <footer>
+        <h1>About Me</h1>
+        <p><b>My name is Murshid Rana. I am an Video Editor, Image Editor Social Media Creator, YouTuber, , Teacher, Web Developer, And graphic designer Etc.</p>
+        <p>Inspired by the teachings of Prophet "Muhammad ﷺ♥️" I strive to serve humanity and spread positivity. I am passionate about learning, sharing goodness, and making a meaningful impact on others' lives. For me, true happiness lies in helping others, not in wealth.</b></p>
+    </footer>
+
+
+    <!-- Rest of your sections -->
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('header .slide-container img');
+        const totalImages = images.length;
+
+        function slideImages() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            document.querySelector('header .slide-container').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(slideImages, 3000); // Slide every 3 seconds
+    
+// script.js
+ document.addEventListener("DOMContentLoaded", () => {
+   const flipCard = document.querySelector(".flip-card");
+ 
+   // Add a click event listener to the flip card
+   flipCard.addEventListener("click", () => {
+     flipCard.classList.toggle("flipped");
+   });
+ });
+ 
+ 
+ 
+   </script>
+  
+    
+</body>
+</html>
